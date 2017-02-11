@@ -1,11 +1,27 @@
 package domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ADDRESS")
 public class Address {
+    @Id
+    private Long id;
+    @Column(name="address_number")
     private Integer addressNumber;
     private String street;
     private String city;
+    @Column(name="zip_code")
     private Long zipCode;
     private String country;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Integer getAddressNumber() {
         return addressNumber;
@@ -50,7 +66,8 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "addressNumber=" + addressNumber +
+                "id=" + id +
+                ", addressNumber=" + addressNumber +
                 ", street='" + street + '\'' +
                 ", city='" + city + '\'' +
                 ", zipCode=" + zipCode +
