@@ -12,7 +12,9 @@ public class UserServiceImpl implements UserService{
         this.userRepository=userRepository;
     }
     public void create(User user) {
+        //première action
         this.userRepository.createUser(user);
+        //troisième action
     }
 
     public User findUser(Long userId) {

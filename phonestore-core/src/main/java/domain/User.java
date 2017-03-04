@@ -11,12 +11,12 @@ public class User {
     private Long id;
     private String name;
     private Integer age;
-    @OneToOne
-    @JoinColumn(name = "address_id", nullable = true)
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "address_id")
     private Address address;
     @OneToMany
     private List<UserPhone> userPhones = new ArrayList<>();
-
+//, referencedColumnName = "id"
     public Long getId() {
         return id;
     }

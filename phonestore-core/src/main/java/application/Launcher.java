@@ -13,7 +13,7 @@ public class Launcher {
         UserService userService = new UserServiceImpl(userRepository);
 
         Address address = new Address();
-        address.setId(1L);
+        address.setId(2L);
         address.setAddressNumber(12);
         address.setStreet("Rue de Paris");
         address.setZipCode(75000L);
@@ -21,11 +21,12 @@ public class Launcher {
         address.setCountry("France");
 
         User user = new User();
-        user.setId(1L);
+        user.setId(2L);
         user.setName("User1");
         user.setAge(26);
         user.setAddress(address);
 
         userService.create(user);
+        //userService.findUsers();
     }
 }

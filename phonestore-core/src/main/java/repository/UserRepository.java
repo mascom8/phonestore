@@ -21,6 +21,7 @@ public class UserRepository {
         Session session = this.sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         session.save(user);
+        //autre opération
         tx.commit();
         session.close();
     }
